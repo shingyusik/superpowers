@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
-# Copy Claude's project-local skills/agents into the shared .agents folders.
+# Seed project-local Claude/Codex agent folders from this plugin.
 
 set -euo pipefail
 
+script_dir="$(cd "$(dirname "$0")" && pwd)"
+plugin_root="$(cd "${script_dir}/.." && pwd)"
 project_root="$(git rev-parse --show-toplevel 2>/dev/null || pwd)"
 
 copy_dir() {
@@ -27,11 +29,7 @@ copy_dir() {
   )
 }
 
-copy_dir "$project_root/.claude/skills" "$project_root/.agents/skills"
-
-script_dir="$(cd "$(dirname "$0")" && pwd)"
-"$script_dir/convert-claude-agents-to-codex" \
-  "$project_root/.claude/agents" \
-  "$project_root/.agents/agents/compound-engineering"
+copy_dir "$plugin_root/agents" "$project_root/.claude/agents"
+copy_dir "$plugin_root/agents-codex/compound-engineering" "$project_root/.agents/agents/compound-engineering"
 
 exit 0

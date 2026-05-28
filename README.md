@@ -224,7 +224,10 @@ already use it in another harness.
 
 **Compound Agents**
 - Includes Compound Engineering `ce-*` reviewer, researcher, design, workflow, and documentation agent prompts under `agents/`.
-- In harnesses that support named agents, use these prompts for specialized review or research. In Codex native plugin installs, skills install natively; named-agent registration may require copying `agents/` into the target agent directory or using a harness-specific converter.
+- Claude-compatible prompts live in `agents/*.md`.
+- Codex-compatible agents live in `agents-codex/compound-engineering/*.toml`.
+- The plugin hooks seed project-local agent folders on session start: Claude receives `.claude/agents/*.md`, while Codex receives `.agents/agents/compound-engineering/*.toml`.
+- When Claude edits or creates `.claude/agents/*.md`, the sync hook converts those markdown agents into Codex TOML. Codex TOML is not copied back into Claude's markdown folder.
 
 **Caveman**
 - **caveman** - Ultra-compressed response mode for shorter agent output while preserving technical substance

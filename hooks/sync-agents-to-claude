@@ -28,6 +28,5 @@ copy_dir() {
 }
 
 copy_dir "$project_root/.agents/skills" "$project_root/.claude/skills"
-copy_dir "$project_root/.agents/agents" "$project_root/.claude/agents"
 
 exit 0
