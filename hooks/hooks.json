@@ -7,7 +7,10 @@
           {
             "type": "command",
             "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/run-hook.cmd\" session-start",
-            "async": false
+            "commandWindows": "\"%CLAUDE_PLUGIN_ROOT%\\hooks\\run-hook.cmd\" session-start",
+            "async": false,
+            "timeout": 30,
+            "statusMessage": "Loading using-superpowers entrypoint"
           }
         ]
       }
