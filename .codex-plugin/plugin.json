@@ -23,6 +23,7 @@
     "workflow"
   ],
   "skills": "./skills/",
+  "hooks": "./hooks/hooks-codex.json",
   "interface": {
     "displayName": "Superpowers",
     "shortDescription": "Superpowers workflows plus Compound Engineering knowledge capture",

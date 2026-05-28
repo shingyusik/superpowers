@@ -6,16 +6,16 @@
         "hooks": [
           {
             "type": "command",
-            "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/run-hook.cmd\" sync-agents-to-claude",
-            "commandWindows": "\"%CLAUDE_PLUGIN_ROOT%\\hooks\\run-hook.cmd\" sync-agents-to-claude",
+            "command": "\"${PLUGIN_ROOT}/hooks/run-hook.cmd\" sync-agents-to-claude",
+            "commandWindows": "\"%PLUGIN_ROOT%\\hooks\\run-hook.cmd\" sync-agents-to-claude",
             "async": false,
             "timeout": 30,
             "statusMessage": "Syncing .agents to .claude"
           },
           {
             "type": "command",
-            "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/run-hook.cmd\" session-start",
-            "commandWindows": "\"%CLAUDE_PLUGIN_ROOT%\\hooks\\run-hook.cmd\" session-start",
+            "command": "\"${PLUGIN_ROOT}/hooks/run-hook.cmd\" session-start",
+            "commandWindows": "\"%PLUGIN_ROOT%\\hooks\\run-hook.cmd\" session-start",
             "async": false,
             "timeout": 30,
             "statusMessage": "Loading using-superpowers entrypoint"
@@ -25,15 +25,15 @@
     ],
     "PostToolUse": [
       {
-        "matcher": "Write|Edit|MultiEdit",
+        "matcher": "apply_patch|Edit|Write",
         "hooks": [
           {
             "type": "command",
-            "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/run-hook.cmd\" sync-claude-to-agents",
-            "commandWindows": "\"%CLAUDE_PLUGIN_ROOT%\\hooks\\run-hook.cmd\" sync-claude-to-agents",
+            "command": "\"${PLUGIN_ROOT}/hooks/run-hook.cmd\" sync-agents-to-claude",
+            "commandWindows": "\"%PLUGIN_ROOT%\\hooks\\run-hook.cmd\" sync-agents-to-claude",
             "async": false,
             "timeout": 30,
-            "statusMessage": "Syncing .claude to .agents"
+            "statusMessage": "Syncing .agents to .claude"
           }
         ]
       }
