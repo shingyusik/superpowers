@@ -233,7 +233,6 @@ already use it in another harness.
 - **caveman-help** - Quick reference for caveman modes and commands
 - **caveman-compress** - Compress natural-language memory files such as `CLAUDE.md`
 - **caveman-stats** - Hook-backed stats skill for caveman token savings
-- **cavecrew** - Decision guide for caveman-style subagents; agent prompts are not bundled into this fork unless added separately
 
 **Meta**
 - **writing-skills** - Create new skills following best practices (includes testing methodology)
