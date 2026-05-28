@@ -1,273 +1,83 @@
-# Superpowers
+# Superpowers Fork: Subagent-First Harness
 
-Superpowers is a complete software development methodology for your coding agents, built on top of a set of composable skills and some initial instructions that make sure your agent uses them.
+> 이 문서는 이 포크의 새 README입니다. 원본 README는 [`README.original.md`](README.original.md)에 보존했습니다.
 
-## Quickstart
+## Purpose
 
-Give your agent Superpowers: [Claude Code](#claude-code), [Codex CLI](#codex-cli), [Codex App](#codex-app), [Factory Droid](#factory-droid), [Gemini CLI](#gemini-cli), [OpenCode](#opencode), [Cursor](#cursor), [GitHub Copilot CLI](#github-copilot-cli).
+이 포크는 Superpowers를 출발점으로 삼되, 더 **서브에이전트 중심적인 하네스**로 진화시키기 위한 실험 공간입니다.
 
-## How it works
+Superpowers가 “스킬 기반 단일 에이전트 규율”에 가깝다면, 이 포크는 “서브에이전트 기반 분산 판단과 검증”을 지향합니다.
 
-It starts from the moment you fire up your coding agent. As soon as it sees that you're building something, it *doesn't* just jump into trying to write code. Instead, it steps back and asks you what you're really trying to do. 
+## Core Philosophy
 
-Once it's teased a spec out of the conversation, it shows it to you in chunks short enough to actually read and digest. 
+- **Delegation-first**
+  - 메인 에이전트가 모든 문제를 직접 해결하지 않고, 문제를 나누고 적절한 서브에이전트에게 위임한다.
 
-After you've signed off on the design, your agent puts together an implementation plan that's clear enough for an enthusiastic junior engineer with poor taste, no judgement, no project context, and an aversion to testing to follow. It emphasizes true red/green TDD, YAGNI (You Aren't Gonna Need It), and DRY. 
+- **Orchestrated over solo**
+  - 하네스의 중심은 단일 실행자가 아니라, 역할 분해·라우팅·통합·판정 흐름이다.
 
-Next up, once you say "go", it launches a *subagent-driven-development* process, having agents work through each engineering task, inspecting and reviewing their work, and continuing forward. It's not uncommon for Claude to be able to work autonomously for a couple hours at a time without deviating from the plan you put together.
+- **Isolated context**
+  - 각 서브에이전트는 좁은 목적, 제한된 맥락, 명확한 산출물을 가진다.
 
-There's a bunch more to it, but that's the core of the system. And because the skills trigger automatically, you don't need to do anything special. Your coding agent just has Superpowers.
+- **Independent verification**
+  - 결과를 만든 에이전트와 검증하는 흐름을 분리한다. 서브에이전트의 성공 보고는 증거가 아니라 검증 대상이다.
 
+- **Context reduction**
+  - 복잡도 관리는 코드 구조뿐 아니라 에이전트가 들고 있는 맥락의 크기와 오염 가능성까지 포함한다.
 
-## Sponsorship
+- **Cross-checked evidence**
+  - 주장보다 테스트, diff, 로그, 재현 절차, 독립 리뷰처럼 교차 확인 가능한 증거를 우선한다.
 
-If Superpowers has helped you do stuff that makes money and you are so inclined, I'd greatly appreciate it if you'd consider [sponsoring my opensource work](https://github.com/sponsors/obra).
+- **Progressive evolution**
+  - 하네스는 처음부터 완성된 규칙 체계가 아니다. 실제 사용, 실패, 반복되는 패턴을 통해 점진적으로 구조를 바꾼다.
 
-Thanks! 
+- **Loose rules, strong boundaries**
+  - 세부 행동은 에이전트가 판단하되, 책임 범위·검증·승인·기록의 경계는 명확히 둔다.
 
-- Jesse
+## Relationship to Superpowers
 
+이 포크는 Superpowers의 좋은 전제를 유지합니다.
 
-## Installation
+- 테스트와 검증을 중시한다.
+- 즉흥적 수정보다 체계적인 절차를 선호한다.
+- 불필요한 복잡도를 줄인다.
+- 증거 없이 성공을 주장하지 않는다.
 
-Installation differs by harness. If you use more than one, install Superpowers separately for each one.
+다만 중심축을 바꿉니다.
 
-### Claude Code
+- 스킬이 메인 에이전트를 강하게 통제하는 구조에서,
+- 메인 에이전트가 서브에이전트 네트워크를 조율하는 구조로 이동합니다.
 
-Superpowers is available via the [official Claude plugin marketplace](https://claude.com/plugins/superpowers)
+## Operating Model
 
-#### Official Marketplace
+1. **Clarify**
+   - 목표, 제약, 성공 기준을 짧게 정리한다.
 
-- Install the plugin from Anthropic's official marketplace:
+2. **Decompose**
+   - 일을 독립 가능한 단위로 나눈다.
 
-  ```bash
-  /plugin install superpowers@claude-plugins-official
-  ```
+3. **Delegate**
+   - 각 단위를 목적이 분명한 서브에이전트에게 맡긴다.
 
-#### Superpowers Marketplace
+4. **Verify**
+   - 산출물을 별도 흐름에서 확인한다.
 
-The Superpowers marketplace provides Superpowers and some other related plugins for Claude Code.
+5. **Integrate**
+   - 검증된 결과만 합친다.
 
-- Register the marketplace:
+6. **Evolve**
+   - 반복되는 실패나 좋은 패턴을 하네스 구조에 반영한다.
 
-  ```bash
-  /plugin marketplace add obra/superpowers-marketplace
-  ```
+## Design Biases
 
-- Install the plugin from this marketplace:
+- 작은 역할이 큰 프롬프트보다 낫다.
+- 독립 검증은 신뢰보다 싸다.
+- 메인 에이전트의 핵심 가치는 직접 구현이 아니라 판단과 조율이다.
+- 규칙은 최소화하되, 경계는 흐리지 않는다.
+- 좋은 하네스는 고정된 명령집이 아니라 진화하는 작업 구조다.
 
-  ```bash
-  /plugin install superpowers@superpowers-marketplace
-  ```
+## Original README
 
-### Codex CLI
+원본 Superpowers README는 아래 파일에 보존되어 있습니다.
 
-Superpowers is available via the [official Codex plugin marketplace](https://github.com/openai/plugins).
-
-- Open the plugin search interface:
-
-  ```bash
-  /plugins
-  ```
-
-- Search for Superpowers:
-
-  ```bash
-  superpowers
-  ```
-
-- Select `Install Plugin`.
-
-### Codex App
-
-Superpowers is available via the [official Codex plugin marketplace](https://github.com/openai/plugins).
-
-- In the Codex app, click on Plugins in the sidebar.
-- You should see `Superpowers` in the Coding section.
-- Click the `+` next to Superpowers and follow the prompts.
-
-#### Using this fork in Codex without changing your local setup
-
-Use this repository as a plugin source only when you are ready to test it. The fork adds `ce-compound`, `ce-compound-refresh`, and Compound Engineering `ce-*` agent prompts to Superpowers.
-
-Codex native plugin installs load skills from `.codex-plugin/plugin.json`. Named agent registration is not part of the Codex native plugin manifest, so the `agents/` directory is shipped in the repository but may need a harness-specific install step before those agents are callable by name.
-
-For a project-local test, create a marketplace entry that points to this checkout:
-
-```json
-{
-  "name": "superpowers-compound-local",
-  "source": {
-    "source": "local",
-    "path": "./plugins/superpowers"
-  },
-  "policy": {
-    "installation": "AVAILABLE",
-    "authentication": "ON_INSTALL"
-  },
-  "category": "Coding"
-}
-```
-
-Then place this checkout at `plugins/superpowers` relative to that marketplace file and install it from Codex's plugin UI. This does not automatically apply the plugin to your current machine until you install it through Codex.
-
-### Factory Droid
-
-- Register the marketplace:
-
-  ```bash
-  droid plugin marketplace add https://github.com/obra/superpowers
-  ```
-
-- Install the plugin:
-
-  ```bash
-  droid plugin install superpowers@superpowers
-  ```
-
-### Gemini CLI
-
-- Install the extension:
-
-  ```bash
-  gemini extensions install https://github.com/obra/superpowers
-  ```
-
-- Update later:
-
-  ```bash
-  gemini extensions update superpowers
-  ```
-
-### OpenCode
-
-OpenCode uses its own plugin install; install Superpowers separately even if you
-already use it in another harness.
-
-- Tell OpenCode:
-
-  ```
-  Fetch and follow instructions from https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.opencode/INSTALL.md
-  ```
-
-- Detailed docs: [docs/README.opencode.md](docs/README.opencode.md)
-
-### Cursor
-
-- In Cursor Agent chat, install from marketplace:
-
-  ```text
-  /add-plugin superpowers
-  ```
-
-- Or search for "superpowers" in the plugin marketplace.
-
-### GitHub Copilot CLI
-
-- Register the marketplace:
-
-  ```bash
-  copilot plugin marketplace add obra/superpowers-marketplace
-  ```
-
-- Install the plugin:
-
-  ```bash
-  copilot plugin install superpowers@superpowers-marketplace
-  ```
-
-## The Basic Workflow
-
-1. **brainstorming** - Activates before writing code. Refines rough ideas through questions, explores alternatives, presents design in sections for validation. Saves design document.
-
-2. **using-git-worktrees** - Activates after design approval. Creates isolated workspace on new branch, runs project setup, verifies clean test baseline.
-
-3. **writing-plans** - Activates with approved design. Breaks work into bite-sized tasks (2-5 minutes each). Every task has exact file paths, complete code, verification steps.
-
-4. **subagent-driven-development** or **executing-plans** - Activates with plan. Dispatches fresh subagent per task with two-stage review (spec compliance, then code quality), or executes in batches with human checkpoints.
-
-5. **test-driven-development** - Activates during implementation. Enforces RED-GREEN-REFACTOR: write failing test, watch it fail, write minimal code, watch it pass, commit. Deletes code written before tests.
-
-6. **requesting-code-review** - Activates between tasks. Reviews against plan, reports issues by severity. Critical issues block progress.
-
-7. **finishing-a-development-branch** - Activates when tasks complete. Verifies tests, presents options (merge/PR/keep/discard), cleans up worktree.
-
-8. **ce-compound** - Activates after meaningful work when the solution, root cause, or project-specific pattern should be saved for future agents. Writes durable knowledge to `docs/solutions/`.
-
-**The agent checks for relevant skills before any task.** Mandatory workflows, not suggestions.
-
-## What's Inside
-
-### Skills Library
-
-**Testing**
-- **test-driven-development** - RED-GREEN-REFACTOR cycle (includes testing anti-patterns reference)
-
-**Debugging**
-- **systematic-debugging** - 4-phase root cause process (includes root-cause-tracing, defense-in-depth, condition-based-waiting techniques)
-- **verification-before-completion** - Ensure it's actually fixed
-
-**Collaboration** 
-- **brainstorming** - Socratic design refinement
-- **writing-plans** - Detailed implementation plans
-- **executing-plans** - Batch execution with checkpoints
-- **dispatching-parallel-agents** - Concurrent subagent workflows
-- **requesting-code-review** - Pre-review checklist
-- **receiving-code-review** - Responding to feedback
-- **using-git-worktrees** - Parallel development branches
-- **finishing-a-development-branch** - Merge/PR decision workflow
-- **subagent-driven-development** - Fast iteration with two-stage review (spec compliance, then code quality)
-
-**Compound Knowledge**
-- **ce-compound** - Capture solved problems, root causes, reusable patterns, and workflow decisions in `docs/solutions/`
-- **ce-compound-refresh** - Refresh stale solution docs and keep the knowledge store aligned with the current codebase
-
-**Compound Agents**
-- Includes Compound Engineering `ce-*` reviewer, researcher, design, workflow, and documentation agent prompts under `agents/`.
-- Claude-compatible prompts live in `agents/*.md`.
-- Codex-compatible agents live in `agents-codex/compound-engineering/*.toml`.
-- The plugin does not sync Claude and Codex agent files. Install or copy the format that matches the tool you are using.
-
-**Caveman**
-- **caveman** - Ultra-compressed response mode for shorter agent output while preserving technical substance
-
-**Meta**
-- **writing-skills** - Create new skills following best practices (includes testing methodology)
-- **using-superpowers** - Introduction to the skills system
-
-## Philosophy
-
-- **Test-Driven Development** - Write tests first, always
-- **Systematic over ad-hoc** - Process over guessing
-- **Complexity reduction** - Simplicity as primary goal
-- **Evidence over claims** - Verify before declaring success
-
-Read [the original release announcement](https://blog.fsck.com/2025/10/09/superpowers/).
-
-## Contributing
-
-The general contribution process for Superpowers is below. Keep in mind that we don't generally accept contributions of new skills and that any updates to skills must work across all of the coding agents we support.
-
-1. Fork the repository
-2. Switch to the 'dev' branch
-3. Create a branch for your work
-4. Follow the `writing-skills` skill for creating and testing new and modified skills
-5. Submit a PR, being sure to fill in the pull request template.
-
-See `skills/writing-skills/SKILL.md` for the complete guide.
-
-## Updating
-
-Superpowers updates are somewhat coding-agent dependent, but are often automatic.
-
-## License
-
-MIT License - see LICENSE file for details
-
-## Community
-
-Superpowers is built by [Jesse Vincent](https://blog.fsck.com) and the rest of the folks at [Prime Radiant](https://primeradiant.com).
-
-- **Discord**: [Join us](https://discord.gg/35wsABTejz) for community support, questions, and sharing what you're building with Superpowers
-- **Issues**: https://github.com/obra/superpowers/issues
-- **Release announcements**: [Sign up](https://primeradiant.com/superpowers/) to get notified about new versions
+- [`README.original.md`](README.original.md)
