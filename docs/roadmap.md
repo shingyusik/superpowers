@@ -20,6 +20,7 @@
 
 - 하네스 철학 정의
 - 핵심 용어 정의
+- Agent와 Skill의 관계 정의
 - Superpowers와의 차이 정리
 - 초기 판단 기준 작성
 
@@ -32,7 +33,7 @@
 완료 기준:
 
 - README와 문서의 철학이 서로 충돌하지 않는다.
-- Main Agent, Subagent, Task, Artifact, Verification의 의미가 명확하다.
+- Main Agent, Subagent, Skill, Task, Artifact, Verification의 의미가 명확하다.
 
 ## Phase 1. Minimal Delegation Loop
 
@@ -66,9 +67,9 @@
 - 하나의 작은 작업을 Subagent에게 위임하고 결과를 검증할 수 있다.
 - Main Agent가 직접 구현하지 않아도 루프를 닫을 수 있다.
 
-## Phase 2. Role-Based Subagents
+## Phase 2. Role-Based Subagents & Skills
 
-목표: 반복되는 역할을 정의하고 역할별 기대 산출물을 정리한다.
+목표: 반복되는 역할을 정의하고, 각 역할이 사용할 스킬의 책임과 기대 산출물을 정리한다.
 
 초기 역할:
 
@@ -82,6 +83,7 @@
 
 - 각 역할의 책임 정의
 - 각 역할의 입력/출력 정의
+- 역할별 스킬의 목적과 사용 시점 정의
 - 역할별 금지 사항 정의
 - 역할이 겹칠 때 우선순위 정리
 
@@ -92,11 +94,13 @@
 - `agents/implementer.md`
 - `agents/reviewer.md`
 - `agents/verifier.md`
+- `docs/skills/skill-model.md`
 
 완료 기준:
 
 - Main Agent가 작업 성격에 따라 적절한 Role을 고를 수 있다.
 - 각 Role은 자신이 하지 말아야 할 일을 알고 있다.
+- Skill이 에이전트의 판단과 실행을 돕는 방법론 문서로 정의된다.
 
 ## Phase 3. Task Contract
 
@@ -249,7 +253,7 @@ Task Contract 필드:
 
 현재 우선순위는 Phase 0 → Phase 1 → Phase 3 → Phase 4다.
 
-Role은 중요하지만, 역할 수를 먼저 늘리면 구조가 무거워질 수 있다. 먼저 위임 계약과 검증 루프를 안정시키는 것이 좋다.
+Role과 Skill은 중요하지만, 역할 수와 스킬 수를 먼저 늘리면 구조가 무거워질 수 있다. 먼저 위임 계약과 검증 루프를 안정시키고, 필요한 스킬만 추가하는 것이 좋다.
 
 ## 당장 다음 작업
 
