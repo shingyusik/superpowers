@@ -228,11 +228,6 @@ already use it in another harness.
 
 **Caveman**
 - **caveman** - Ultra-compressed response mode for shorter agent output while preserving technical substance
-- **caveman-commit** - Terse Conventional Commit message generation
-- **caveman-review** - One-line actionable review comments
-- **caveman-help** - Quick reference for caveman modes and commands
-- **caveman-compress** - Compress natural-language memory files such as `CLAUDE.md`
-- **caveman-stats** - Hook-backed stats skill for caveman token savings
 
 **Meta**
 - **writing-skills** - Create new skills following best practices (includes testing methodology)
