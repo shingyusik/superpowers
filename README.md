@@ -117,7 +117,7 @@ After installing or copying this fork into a project, run the one-time project a
 D:\01_Project\superpowers\hooks\run-hook.cmd install-project-agents
 ```
 
-This seeds Claude-compatible agents into `.claude/agents/` and Codex-compatible TOML agents into `.agents/agents/compound-engineering/`. It is not run on every session start.
+This seeds Claude-compatible agents into `.claude/agents/` and Codex-compatible TOML agents into `.agents/agents/`. It is not run on every session start.
 
 ### Factory Droid
 
@@ -234,7 +234,7 @@ already use it in another harness.
 - Includes Compound Engineering `ce-*` reviewer, researcher, design, workflow, and documentation agent prompts under `agents/`.
 - Claude-compatible prompts live in `agents/*.md`.
 - Codex-compatible agents live in `agents-codex/compound-engineering/*.toml`.
-- Run `hooks/run-hook.cmd install-project-agents` once from a project root to seed `.claude/agents/*.md` and `.agents/agents/compound-engineering/*.toml`.
+- Run `hooks/run-hook.cmd install-project-agents` once from a project root to seed `.claude/agents/*.md` and `.agents/agents/*.toml`.
 - When Claude edits or creates `.claude/agents/*.md`, the sync hook converts those markdown agents into Codex TOML. Codex TOML is not copied back into Claude's markdown folder.
 
 **Caveman**

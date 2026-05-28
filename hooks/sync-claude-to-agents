@@ -32,6 +32,6 @@ copy_dir "$project_root/.claude/skills" "$project_root/.agents/skills"
 script_dir="$(cd "$(dirname "$0")" && pwd)"
 "$script_dir/convert-claude-agents-to-codex" \
   "$project_root/.claude/agents" \
-  "$project_root/.agents/agents/compound-engineering"
+  "$project_root/.agents/agents"
 
 exit 0

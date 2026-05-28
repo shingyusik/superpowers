@@ -30,6 +30,6 @@ copy_dir() {
 }
 
 copy_dir "$plugin_root/agents" "$project_root/.claude/agents"
-copy_dir "$plugin_root/agents-codex/compound-engineering" "$project_root/.agents/agents/compound-engineering"
+copy_dir "$plugin_root/agents-codex/compound-engineering" "$project_root/.agents/agents"
 
 exit 0
