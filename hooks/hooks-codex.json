@@ -14,21 +14,6 @@
           }
         ]
       }
-    ],
-    "PostToolUse": [
-      {
-        "matcher": "apply_patch|Edit|Write",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "\"${PLUGIN_ROOT}/hooks/run-hook.cmd\" sync-agents-to-claude",
-            "commandWindows": "\"%PLUGIN_ROOT%\\hooks\\run-hook.cmd\" sync-agents-to-claude",
-            "async": false,
-            "timeout": 30,
-            "statusMessage": "Syncing skills to .claude"
-          }
-        ]
-      }
     ]
   }
 }

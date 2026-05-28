@@ -14,21 +14,6 @@
           }
         ]
       }
-    ],
-    "PostToolUse": [
-      {
-        "matcher": "Write|Edit|MultiEdit",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/run-hook.cmd\" sync-claude-to-agents",
-            "commandWindows": "\"%CLAUDE_PLUGIN_ROOT%\\hooks\\run-hook.cmd\" sync-claude-to-agents",
-            "async": false,
-            "timeout": 30,
-            "statusMessage": "Converting Claude agents to Codex TOML"
-          }
-        ]
-      }
     ]
   }
 }
