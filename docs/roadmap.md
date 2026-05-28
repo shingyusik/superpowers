@@ -211,7 +211,7 @@ Task Contract 필드:
 
 ## Phase 6. Improvement Loop
 
-목표: Harness Improvement Agent가 실제 사용 결과를 바탕으로 개선 후보를 찾고, 필요한 반영 판단까지 하나의 루프로 다룬다.
+목표: Harness Improvement Agent가 실제 사용 결과를 바탕으로 반복 문제를 찾고, 작고 검증 가능한 개선은 직접 반영하는 루프를 만든다.
 
 Harness Improvement Agent의 검토 질문:
 
@@ -244,7 +244,8 @@ Harness Improvement Agent의 검토 질문:
 
 - 실패와 좋은 패턴이 일회성 대화로 사라지지 않는다.
 - 모든 워크플로우 마지막에 Harness Improvement Agent가 호출된다.
-- 반복되는 문제는 스킬, 에이전트, 산출물 템플릿, task contract 템플릿, 워크플로우 중 하나로 반영된다.
+- 작은 개선은 사용자 승인 없이 직접 반영할 수 있다.
+- 대량 삭제, 대규모 재작성, 하네스 철학 변경, 새 스킬·에이전트 대량 생성은 사용자 승인 후 수행한다.
 
 ## Phase 7. Harness Runtime
 
