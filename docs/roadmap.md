@@ -34,6 +34,7 @@
 
 - README와 문서의 철학이 서로 충돌하지 않는다.
 - Main Agent, Subagent, Harness Improvement Agent, Skill, Task, Artifact, Verification의 의미가 명확하다.
+- Main Agent가 Codex/Claude Code의 기본 대면 에이전트임이 명확하다.
 
 ## Phase 1. Minimal Delegation Loop
 
@@ -90,6 +91,7 @@
 작업:
 
 - 최상위 에이전트 세 가지의 책임 정의
+- Main Agent가 별도 정의 파일이 아닌 기본 실행 에이전트임을 명시
 - Subagent 내부 역할의 책임 정의
 - 각 역할의 입력/출력 정의
 - 역할별 스킬의 목적과 사용 시점 정의
@@ -128,6 +130,8 @@ Task Contract 필드:
 작업:
 
 - Task Contract 문서 작성
+- 범위 밖 발견 사항 기록 방식 정의
+- 계획 확대 금지 규칙 정의
 - 템플릿 작성
 - 좋은 예시와 나쁜 예시 작성
 - 기존 위임 루프에 적용
@@ -141,6 +145,7 @@ Task Contract 필드:
 
 - Subagent가 추가 질문 없이 작업 범위와 산출물을 이해할 수 있다.
 - 범위 밖 발견 사항은 구현하지 않고 보고하게 된다.
+- Subagent가 승인 없이 새 task를 정의하거나 계획을 확대하지 않는다.
 
 ## Phase 4. Verification Pipeline
 
@@ -188,6 +193,8 @@ Task Contract 필드:
 
 작업:
 
+- worktree 기반 병렬 실행 기본값 정의
+- 병렬 실행 가능 여부를 Main Agent가 판단하는 기준 작성
 - 각 패턴의 사용 조건 정의
 - 각 패턴의 흐름 작성
 - 실패 조건과 중단 조건 작성
@@ -200,6 +207,7 @@ Task Contract 필드:
 완료 기준:
 
 - Main Agent가 작업 유형에 따라 적절한 오케스트레이션 패턴을 선택할 수 있다.
+- 의존성이 없는 Subagent 작업은 worktree 병렬 실행으로 계획된다.
 
 ## Phase 6. Improvement Loop
 
@@ -270,7 +278,7 @@ Harness Improvement Agent의 검토 질문:
 
 현재 우선순위는 Phase 0 → Phase 1 → Phase 3 → Phase 4다. MVP에서는 Improve와 Evolve를 분리하지 않고 Improvement Loop 하나로 유지한다.
 
-Role과 Skill은 중요하지만, 역할 수와 스킬 수를 먼저 늘리면 구조가 무거워질 수 있다. 먼저 위임 계약과 검증 루프를 안정시키고, 필요한 스킬만 추가하는 것이 좋다.
+Role과 Skill은 중요하지만, 역할 수와 스킬 수를 먼저 늘리면 구조가 무거워질 수 있다. 먼저 위임 계약, 범위 통제, worktree 병렬 실행 기준, 검증 루프를 안정시키고 필요한 스킬만 추가하는 것이 좋다.
 
 ## 당장 다음 작업
 
