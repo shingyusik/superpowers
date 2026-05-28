@@ -86,6 +86,31 @@ Superpowers is available via the [official Codex plugin marketplace](https://git
 - You should see `Superpowers` in the Coding section.
 - Click the `+` next to Superpowers and follow the prompts.
 
+#### Using this fork in Codex without changing your local setup
+
+Use this repository as a plugin source only when you are ready to test it. The fork adds `ce-compound`, `ce-compound-refresh`, and Compound Engineering `ce-*` agent prompts to Superpowers.
+
+Codex native plugin installs load skills from `.codex-plugin/plugin.json`. Named agent registration is not part of the Codex native plugin manifest, so the `agents/` directory is shipped in the repository but may need a harness-specific install step before those agents are callable by name.
+
+For a project-local test, create a marketplace entry that points to this checkout:
+
+```json
+{
+  "name": "superpowers-compound-local",
+  "source": {
+    "source": "local",
+    "path": "./plugins/superpowers"
+  },
+  "policy": {
+    "installation": "AVAILABLE",
+    "authentication": "ON_INSTALL"
+  },
+  "category": "Coding"
+}
+```
+
+Then place this checkout at `plugins/superpowers` relative to that marketplace file and install it from Codex's plugin UI. This does not automatically apply the plugin to your current machine until you install it through Codex.
+
 ### Factory Droid
 
 - Register the marketplace:
@@ -167,6 +192,8 @@ already use it in another harness.
 
 7. **finishing-a-development-branch** - Activates when tasks complete. Verifies tests, presents options (merge/PR/keep/discard), cleans up worktree.
 
+8. **ce-compound** - Activates after meaningful work when the solution, root cause, or project-specific pattern should be saved for future agents. Writes durable knowledge to `docs/solutions/`.
+
 **The agent checks for relevant skills before any task.** Mandatory workflows, not suggestions.
 
 ## What's Inside
@@ -190,6 +217,14 @@ already use it in another harness.
 - **using-git-worktrees** - Parallel development branches
 - **finishing-a-development-branch** - Merge/PR decision workflow
 - **subagent-driven-development** - Fast iteration with two-stage review (spec compliance, then code quality)
+
+**Compound Knowledge**
+- **ce-compound** - Capture solved problems, root causes, reusable patterns, and workflow decisions in `docs/solutions/`
+- **ce-compound-refresh** - Refresh stale solution docs and keep the knowledge store aligned with the current codebase
+
+**Compound Agents**
+- Includes Compound Engineering `ce-*` reviewer, researcher, design, workflow, and documentation agent prompts under `agents/`.
+- In harnesses that support named agents, use these prompts for specialized review or research. In Codex native plugin installs, skills install natively; named-agent registration may require copying `agents/` into the target agent directory or using a harness-specific converter.
 
 **Meta**
 - **writing-skills** - Create new skills following best practices (includes testing methodology)

@@ -1,6 +1,6 @@
 {
   "name": "superpowers-dev",
-  "description": "Development marketplace for Superpowers core skills library",
+  "description": "Development marketplace for Superpowers with Compound Engineering knowledge capture",
   "owner": {
     "name": "Jesse Vincent",
     "email": "jesse@fsck.com"
@@ -8,7 +8,7 @@
   "plugins": [
     {
       "name": "superpowers",
-      "description": "Core skills library for Claude Code: TDD, debugging, collaboration patterns, and proven techniques",
+      "description": "Core Superpowers skills with Compound Engineering knowledge capture and agent prompts",
       "version": "5.1.0",
       "source": "./",
       "author": {

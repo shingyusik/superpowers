@@ -1,14 +1,14 @@
 {
   "name": "superpowers",
   "displayName": "Superpowers",
-  "description": "Core skills library: TDD, debugging, collaboration patterns, and proven techniques",
+  "description": "Core Superpowers skills with Compound Engineering knowledge capture and agent prompts",
   "version": "5.1.0",
   "author": {
     "name": "Jesse Vincent",
     "email": "jesse@fsck.com"
   },
-  "homepage": "https://github.com/obra/superpowers",
-  "repository": "https://github.com/obra/superpowers",
+  "homepage": "https://github.com/shingyusik/superpowers",
+  "repository": "https://github.com/shingyusik/superpowers",
   "license": "MIT",
   "keywords": [
     "skills",
@@ -16,7 +16,9 @@
     "debugging",
     "collaboration",
     "best-practices",
-    "workflows"
+    "workflows",
+    "compound-engineering",
+    "knowledge-management"
   ],
   "skills": "./skills/",
   "agents": "./agents/",

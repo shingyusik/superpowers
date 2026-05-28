@@ -104,6 +104,19 @@ When multiple skills could apply, use this order:
 "Let's build X" → brainstorming first, then implementation skills.
 "Fix this bug" → debugging first, then domain-specific skills.
 
+## Compound Knowledge
+
+After a non-trivial bugfix, design decision, integration discovery, or reusable workflow pattern is complete, consider the `ce-compound` skill before ending the work.
+
+Use `ce-compound` when the work produced knowledge that should help future agents:
+
+- A root cause was found and fixed
+- A reusable implementation or testing pattern emerged
+- A project-specific integration gotcha was solved
+- A durable workflow decision should be discoverable later
+
+Compound knowledge lives in `docs/solutions/`. Do not create Compound brainstorm or plan artifacts unless the user explicitly asks for those workflows.
+
 ## Skill Types
 
 **Rigid** (TDD, debugging): Follow exactly. Don't adapt away discipline.
