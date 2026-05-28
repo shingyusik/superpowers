@@ -226,6 +226,15 @@ already use it in another harness.
 - Includes Compound Engineering `ce-*` reviewer, researcher, design, workflow, and documentation agent prompts under `agents/`.
 - In harnesses that support named agents, use these prompts for specialized review or research. In Codex native plugin installs, skills install natively; named-agent registration may require copying `agents/` into the target agent directory or using a harness-specific converter.
 
+**Caveman**
+- **caveman** - Ultra-compressed response mode for shorter agent output while preserving technical substance
+- **caveman-commit** - Terse Conventional Commit message generation
+- **caveman-review** - One-line actionable review comments
+- **caveman-help** - Quick reference for caveman modes and commands
+- **caveman-compress** - Compress natural-language memory files such as `CLAUDE.md`
+- **caveman-stats** - Hook-backed stats skill for caveman token savings
+- **cavecrew** - Decision guide for caveman-style subagents; agent prompts are not bundled into this fork unless added separately
+
 **Meta**
 - **writing-skills** - Create new skills following best practices (includes testing methodology)
 - **using-superpowers** - Introduction to the skills system
