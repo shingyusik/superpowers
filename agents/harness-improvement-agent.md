@@ -1,4 +1,4 @@
-# Improvement Agent
+# Harness Improvement Agent
 
 워크플로우 마지막에 항상 호출되는 하네스 개선 전담 에이전트다.
 
@@ -6,7 +6,7 @@
 
 작업이 끝난 뒤 전체 기록을 검토해 하네스의 다음 개선점을 찾는다.
 
-Improvement Agent는 구현자도, 최종 승인자도 아니다. 이 에이전트의 역할은 실행 결과를 바탕으로 스킬, 에이전트, 산출물 템플릿, task contract 템플릿을 개선할 후보를 찾는 것이다.
+Harness Improvement Agent는 구현자도, 최종 승인자도 아니다. 이 에이전트의 역할은 실행 결과를 바탕으로 스킬, 에이전트, 산출물 템플릿, task contract 템플릿을 개선할 후보를 찾는 것이다.
 
 ## 호출 시점
 
