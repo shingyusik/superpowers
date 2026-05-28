@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Seed project-local Claude/Codex agent folders from this plugin.
+# One-time project setup for bundled Claude/Codex agents.
 
 set -euo pipefail
 

@@ -111,6 +111,14 @@ For a project-local test, create a marketplace entry that points to this checkou
 
 Then place this checkout at `plugins/superpowers` relative to that marketplace file and install it from Codex's plugin UI. This does not automatically apply the plugin to your current machine until you install it through Codex.
 
+After installing or copying this fork into a project, run the one-time project agent setup from that project's root:
+
+```powershell
+D:\01_Project\superpowers\hooks\run-hook.cmd install-project-agents
+```
+
+This seeds Claude-compatible agents into `.claude/agents/` and Codex-compatible TOML agents into `.agents/agents/compound-engineering/`. It is not run on every session start.
+
 ### Factory Droid
 
 - Register the marketplace:
@@ -226,7 +234,7 @@ already use it in another harness.
 - Includes Compound Engineering `ce-*` reviewer, researcher, design, workflow, and documentation agent prompts under `agents/`.
 - Claude-compatible prompts live in `agents/*.md`.
 - Codex-compatible agents live in `agents-codex/compound-engineering/*.toml`.
-- The plugin hooks seed project-local agent folders on session start: Claude receives `.claude/agents/*.md`, while Codex receives `.agents/agents/compound-engineering/*.toml`.
+- Run `hooks/run-hook.cmd install-project-agents` once from a project root to seed `.claude/agents/*.md` and `.agents/agents/compound-engineering/*.toml`.
 - When Claude edits or creates `.claude/agents/*.md`, the sync hook converts those markdown agents into Codex TOML. Codex TOML is not copied back into Claude's markdown folder.
 
 **Caveman**

@@ -6,22 +6,6 @@
         "hooks": [
           {
             "type": "command",
-            "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/run-hook.cmd\" bootstrap-project-agents",
-            "commandWindows": "\"%CLAUDE_PLUGIN_ROOT%\\hooks\\run-hook.cmd\" bootstrap-project-agents",
-            "async": false,
-            "timeout": 30,
-            "statusMessage": "Installing project agents"
-          },
-          {
-            "type": "command",
-            "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/run-hook.cmd\" sync-agents-to-claude",
-            "commandWindows": "\"%CLAUDE_PLUGIN_ROOT%\\hooks\\run-hook.cmd\" sync-agents-to-claude",
-            "async": false,
-            "timeout": 30,
-            "statusMessage": "Syncing skills to .claude"
-          },
-          {
-            "type": "command",
             "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/run-hook.cmd\" session-start",
             "commandWindows": "\"%CLAUDE_PLUGIN_ROOT%\\hooks\\run-hook.cmd\" session-start",
             "async": false,
