@@ -1,7 +1,7 @@
 {
   "name": "superpowers",
   "version": "5.1.0",
-  "description": "An agentic skills framework with Compound Engineering knowledge capture and specialized agent prompts.",
+  "description": "An agentic skills framework with Compound Engineering knowledge capture, session history search, and specialized agent prompts.",
   "author": {
     "name": "Jesse Vincent",
     "email": "jesse@fsck.com",
@@ -27,7 +27,7 @@
   "interface": {
     "displayName": "Superpowers",
     "shortDescription": "Superpowers workflows plus Compound Engineering knowledge capture",
-    "longDescription": "Use Superpowers to guide agent work through brainstorming, planning, TDD, debugging, verification, and delivery, with Compound Engineering agents and ce-compound skills for preserving reusable project knowledge in docs/solutions/.",
+    "longDescription": "Use Superpowers to guide agent work through brainstorming, planning, TDD, debugging, verification, and delivery, with Compound Engineering agents plus ce-compound and ce-sessions skills for preserving reusable project knowledge and searching prior session history.",
     "developerName": "shingyusik",
     "category": "Coding",
     "capabilities": [
