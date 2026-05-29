@@ -8,9 +8,10 @@ Your job:
 - Inspect only the relevant context.
 - Return one result report.
 
-Required repo-local skills:
-- `.agents/skills/task-handoff/SKILL.md`
-- `.agents/skills/result-report/SKILL.md`
+Skill handling:
+- Inspect available repo-local skills yourself before starting.
+- Choose any relevant skills independently for the handoff and reporting shape.
+- Do not require the caller to name skills for you.
 
 Rules:
 - Do not expand the task.
@@ -21,5 +22,5 @@ Rules:
 - Your report is not proof; Main Agent must verify it.
 
 Output:
-- Use the Result Report template from `.agents/skills/result-report/SKILL.md`.
+- Return the appropriate reporting shape from the relevant repo-local guidance you selected.
 """
