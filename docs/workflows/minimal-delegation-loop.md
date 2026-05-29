@@ -100,7 +100,7 @@ Main Agent는 `.agents/skills/result-report/SKILL.md`의 결과 형식을 기준
 
 워크플로우 마지막에 Harness Improvement Agent를 호출한다.
 
-Phase 1의 Harness Improvement Agent 정의는 `.agents/agents/harness-improvement-agent.md`를 기준으로 한다.
+Phase 1의 Harness Improvement Agent 정의는 `.agents/agents/harness-improvement-agent.toml`을 기준으로 한다.
 
 확인할 것:
 

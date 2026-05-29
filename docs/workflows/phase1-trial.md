@@ -21,8 +21,8 @@ In scope:
 - `.agents/skills/minimal-delegation-loop/SKILL.md`
 - `.agents/skills/task-handoff/SKILL.md`
 - `.agents/skills/result-report/SKILL.md`
-- `.agents/agents/minimal-delegation-worker.md`
-- `.agents/agents/harness-improvement-agent.md`
+- `.agents/agents/minimal-delegation-worker.toml`
+- `.agents/agents/harness-improvement-agent.toml`
 - 작은 Subagent 검토 1회 실행
 
 Out of scope:
@@ -53,8 +53,8 @@ Subagent에게 제공한 주요 context:
   - `.agents/skills/minimal-delegation-loop/SKILL.md`
   - `.agents/skills/task-handoff/SKILL.md`
   - `.agents/skills/result-report/SKILL.md`
-  - `.agents/agents/minimal-delegation-worker.md`
-  - `.agents/agents/harness-improvement-agent.md`
+  - `.agents/agents/minimal-delegation-worker.toml`
+  - `.agents/agents/harness-improvement-agent.toml`
 
 ## Codex CLI Trial Result
 
@@ -72,8 +72,8 @@ Evidence reported:
 - `.agents/skills/minimal-delegation-loop/SKILL.md`
 - `.agents/skills/task-handoff/SKILL.md`
 - `.agents/skills/result-report/SKILL.md`
-- `.agents/agents/minimal-delegation-worker.md`
-- `.agents/agents/harness-improvement-agent.md`
+- `.agents/agents/minimal-delegation-worker.toml`
+- `.agents/agents/harness-improvement-agent.toml`
 
 ## Verify
 

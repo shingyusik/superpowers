@@ -98,6 +98,11 @@ Skills are not prose — they are code that shapes agent behavior. If you modify
 
 Before proposing changes to skill design, workflow philosophy, or architecture, read existing skills and understand the project's design decisions. Superpowers has its own tested philosophy about skill design, agent behavior shaping, and terminology (e.g., "your human partner" is deliberate, not interchangeable with "the user"). Changes that rewrite the project's voice or restructure its approach without understanding why it exists will be rejected.
 
+## Project Agent Harness
+
+- Future agents working in this project MUST use `.agents/skills/writing-skills/SKILL.md` before creating, editing, or verifying any skill.
+- `.agents/agents/*.toml` is the required format for project subagent definitions. Do not add Markdown subagent definitions under `.agents/agents/`.
+
 ## General
 
 - Read `.github/PULL_REQUEST_TEMPLATE.md` before submitting

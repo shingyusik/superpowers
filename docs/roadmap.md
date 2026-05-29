@@ -64,8 +64,8 @@
 - `.agents/skills/minimal-delegation-loop/SKILL.md`
 - `.agents/skills/task-handoff/SKILL.md`
 - `.agents/skills/result-report/SKILL.md`
-- `.agents/agents/minimal-delegation-worker.md`
-- `.agents/agents/harness-improvement-agent.md`
+- `.agents/agents/minimal-delegation-worker.toml`
+- `.agents/agents/harness-improvement-agent.toml`
 
 완료 기준:
 
@@ -102,12 +102,12 @@
 
 산출물:
 
-- `.agents/agents/researcher.md`
-- `.agents/agents/planner.md`
-- `.agents/agents/implementer.md`
-- `.agents/agents/reviewer.md`
-- `.agents/agents/verifier.md`
-- `.agents/agents/harness-improvement-agent.md`
+- `.agents/agents/researcher.toml`
+- `.agents/agents/planner.toml`
+- `.agents/agents/implementer.toml`
+- `.agents/agents/reviewer.toml`
+- `.agents/agents/verifier.toml`
+- `.agents/agents/harness-improvement-agent.toml`
 - `docs/skills/skill-model.md`
 
 완료 기준:
@@ -239,7 +239,7 @@ Harness Improvement Agent의 검토 질문:
 산출물:
 
 - `docs/workflows/evolution-loop.md`
-- `.agents/agents/harness-improvement-agent.md`
+- `.agents/agents/harness-improvement-agent.toml`
 - `.agents/skills/retrospective/SKILL.md`
 
 완료 기준:
