@@ -8,14 +8,21 @@ Phase 1을 진행하라는 요청.
 
 ## Clarify
 
-Goal: Phase 1 산출물과 완료 기준을 만족하는 최소 위임 루프 문서와 템플릿을 만든다.
+Goal: Phase 1 산출물과 완료 기준을 만족하는 Codex CLI / Codex subagents용 최소 위임 루프 문서와 `.agents` 정의를 만든다.
+
+Test runtime:
+
+- Codex CLI parent process
+- Codex subagents
 
 In scope:
 
 - `docs/workflows/minimal-delegation-loop.md`
-- `templates/task-handoff.md`
-- `templates/result-report.md`
-- 기존 `agents/harness-improvement-agent.md`와 연결 확인
+- `.agents/skills/minimal-delegation-loop/SKILL.md`
+- `.agents/skills/task-handoff/SKILL.md`
+- `.agents/skills/result-report/SKILL.md`
+- `.agents/agents/minimal-delegation-worker.md`
+- `.agents/agents/harness-improvement-agent.md`
 - 작은 Subagent 검토 1회 실행
 
 Out of scope:
@@ -43,47 +50,53 @@ Subagent에게 제공한 주요 context:
 - Roadmap section: `docs/roadmap.md` Phase 1
 - Review files:
   - `docs/workflows/minimal-delegation-loop.md`
-  - `templates/task-handoff.md`
-  - `templates/result-report.md`
-  - `agents/harness-improvement-agent.md`
+  - `.agents/skills/minimal-delegation-loop/SKILL.md`
+  - `.agents/skills/task-handoff/SKILL.md`
+  - `.agents/skills/result-report/SKILL.md`
+  - `.agents/agents/minimal-delegation-worker.md`
+  - `.agents/agents/harness-improvement-agent.md`
 
-## Subagent Result
+## Codex CLI Trial Result
 
 Summary:
 
-- Phase 1 문서/템플릿 산출물은 대체로 충족.
-- 최소 위임 루프, task handoff, result report, Harness Improvement Agent final-call rule은 확인됨.
-- 갭: “실제 작은 작업에 적용해 보기” 기록이 repo 안에 없었음.
+- Codex CLI가 read-only worker subagent를 생성해 Phase 1 산출물을 검토했다.
+- worker와 parent verification 모두 현재 Phase 1 산출물이 `docs/roadmap.md`의 산출물과 완료 기준을 문서/템플릿 수준에서 만족한다고 판단했다.
+- Caveat: trial evidence는 repo 문서의 요약 기록이며, raw transcript/log를 별도 artifact로 저장하지 않았다.
 
 Evidence reported:
 
-- `docs/workflows/minimal-delegation-loop.md`
-- `templates/task-handoff.md`
-- `templates/result-report.md`
-- `agents/harness-improvement-agent.md`
 - `docs/roadmap.md` Phase 1 section
+- `docs/workflows/minimal-delegation-loop.md`
+- `docs/workflows/phase1-trial.md`
+- `.agents/skills/minimal-delegation-loop/SKILL.md`
+- `.agents/skills/task-handoff/SKILL.md`
+- `.agents/skills/result-report/SKILL.md`
+- `.agents/agents/minimal-delegation-worker.md`
+- `.agents/agents/harness-improvement-agent.md`
 
 ## Verify
 
 Main Agent verification:
 
-- Subagent가 지적한 갭은 타당함.
-- 이 파일을 추가해 실제 적용 기록을 남긴다.
-- Subagent는 파일을 수정하지 않았고, 보고만 수행했다.
+- 모든 Phase 1 산출물 경로가 존재한다.
+- task handoff와 result report는 `.agents/skills`가 source of truth다.
+- Codex worker는 파일을 수정하지 않았고, 보고만 수행했다.
 
 ## Integrate
 
 Integrated change:
 
-- `docs/workflows/phase1-trial.md` 추가.
+- trial 기록을 Codex CLI / Codex worker subagent 기준으로 갱신했다.
 
 ## Report
 
 Phase 1은 이제 다음을 포함한다.
 
 - 최소 위임 루프 문서
-- task handoff 템플릿
-- result report 템플릿
+- task handoff skill
+- result report skill
+- Codex-facing Phase 1 agent definitions
 - Harness Improvement Agent 호출 규칙
 - 실제 작은 Subagent 검토 1회 적용 기록
 

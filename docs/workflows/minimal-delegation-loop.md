@@ -1,6 +1,8 @@
 # Minimal Delegation Loop
 
-Phase 1의 목적은 복잡한 하네스 런타임 없이도 Main Agent가 작은 작업 하나를 Subagent에게 위임하고, 결과를 검증하고, 통합하고, 개선까지 닫을 수 있게 만드는 것이다.
+Phase 1의 목적은 복잡한 하네스 런타임 없이 Codex CLI / Codex subagents에서 Main Agent가 작은 작업 하나를 Subagent에게 위임하고, 결과를 검증하고, 통합하고, 개선까지 닫을 수 있게 만드는 것이다.
+
+테스트 런타임은 Codex CLI의 parent process와 Codex subagents다. Phase 1은 별도 Hermes 런타임을 전제하지 않는다.
 
 ## 목표
 
@@ -44,7 +46,7 @@ Phase 1에서는 한 번에 하나의 작은 task만 위임한다. 여러 Subage
 
 ## 3. Delegate
 
-Main Agent는 `templates/task-handoff.md` 형식으로 Subagent에게 작업을 넘긴다.
+Main Agent는 `.agents/skills/task-handoff/SKILL.md` 형식으로 Codex subagent에게 작업을 넘긴다.
 
 반드시 포함할 것:
 
@@ -84,7 +86,7 @@ Main Agent는 검증된 결과만 현재 작업 결과에 반영한다.
 
 ## 6. Report
 
-Main Agent는 사용자에게 짧게 보고한다.
+Main Agent는 `.agents/skills/result-report/SKILL.md`의 결과 형식을 기준으로 사용자에게 짧게 보고한다.
 
 포함할 것:
 
@@ -97,6 +99,8 @@ Main Agent는 사용자에게 짧게 보고한다.
 ## 7. Improve
 
 워크플로우 마지막에 Harness Improvement Agent를 호출한다.
+
+Phase 1의 Harness Improvement Agent 정의는 `.agents/agents/harness-improvement-agent.md`를 기준으로 한다.
 
 확인할 것:
 
